@@ -1,0 +1,216 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap");
+
+:root {
+  --bg: #171408;
+  --bg-secondary: #1d1b11;
+  --bg-tertiary: #252318;
+  --bg-brand-dim: #3d1f00;
+  --text-primary: #dfddd3;
+  --text-secondary: #b6b5af;
+  --text-tertiary: #929087;
+  --text-brand-primary: #fd8404;
+  --text-brand-secondary: #c08241;
+  --text-brand-primary-light: #dfc09f;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.75;
+  background-color: var(--bg);
+  margin: 0;
+  padding: 0;
+  color: var(--text-primary);
+}
+
+main {
+  max-width: 32.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2.5rem;
+}
+
+section:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+p {
+  margin-top: 0.25rem;
+  margin-bottom: 0.75rem;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding-left: 1.5rem;
+  line-height: 1.75;
+}
+
+li:not(:where(ol.list-none, ul.list-none) li) {
+  line-height: 1.6;
+  padding-left: 0.25rem;
+}
+
+.list-none {
+  list-style-type: none;
+  margin: 0;
+  padding: 0rem;
+}
+
+h2,
+.education > li > .year,
+.header > .header-links > a {
+  font-family: "Inconsolata", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.025rem;
+  color: var(--text-tertiary);
+  font-weight: 400;
+  font-size: 0.875rem;
+}
+
+.education > li > .year {
+  color: var(--text-tertiary);
+  text-align: right;
+  width: 100%;
+}
+
+h3 {
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+#my-title {
+  font-family: "Newsreader", sans-serif;
+  font-size: 0.95rem;
+  text-transform: none;
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+i {
+  font-family: "Newsreader", sans-serif;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+a {
+  color: var(--text-brand-primary);
+}
+
+a:visited {
+  color: var(--text-brand-secondary);
+}
+
+::selection {
+  background-color: var(--bg-brand-dim);
+  color: var(--text-brand-primary-light);
+}
+
+::-moz-selection {
+  background-color: var(--bg-brand-dim);
+  color: var(--text-brand-primary-light);
+}
+
+.container {
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: var(--bg-secondary);
+  margin-top: 0.5rem;
+}
+
+.education > li {
+  display: grid;
+  grid-template-columns: auto 3fr auto;
+  margin: 0;
+  padding: 0;
+}
+
+ol.education,
+ul.education {
+  margin-top: 0.25rem;
+}
+
+.education > li > img {
+  width: 2rem;
+  height: 2rem;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+  margin-right: 1.25rem;
+}
+
+.education > li:where(:not(:last-of-type)) {
+  margin-bottom: 0.75rem;
+}
+
+.education > li > div > span {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+}
+
+s {
+  color: var(--text-tertiary);
+}
+
+/* select a list if any paragraph appears before it */
+p + :is(ol, ul) {
+  margin-top: -0.5rem;
+}
+
+.note {
+  padding: 0.5rem;
+  background-color: var(--bg-secondary);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  border-radius: 4px;
+}
+
+.note p {
+  margin: 0;
+}
+
+.links {
+  padding-top: 0.5rem;
+}
+
+.links > li {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.links > li > a {
+  color: var(--text-primary);
+}
+
+.links > li > .description {
+  color: var(--text-secondary);
+}
+
+.icon-link {
+  color: var(--text-tertiary);
+  margin-right: 0.25rem;
+  text-decoration: none;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.header > .header-links {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
