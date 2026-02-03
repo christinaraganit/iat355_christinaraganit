@@ -160,7 +160,8 @@ ul.education {
   font-size: 0.8rem;
 }
 
-s {
+.strikethrough {
+  text-decoration: line-through;
   color: var(--text-tertiary);
 }
 
