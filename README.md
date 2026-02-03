@@ -6,7 +6,9 @@ This portfolio was hosted on vercel because my GitHub pages already has the port
 
 ## What I built
 
-As of the time of submission, the following is the structure of the site. I took some flexibility with the recommended folder structure and decided to organize the visualizations-related pages in its own folder so that it can be acessible through my website on /visualizations, rather than /visualizations.html.
+This website is built using HTML and CSS. It has been hosted with Vercel. The website is accessible through the link https://christinaraganit.vercel.app/. Hyperlinks to my contact methods (namely X (Twitter), LinkedIn, and email) are available in the website. As of the time of submission, the only other accessible page in the website is https://christinaraganit.vercel.app/visualizations.
+
+The following is the structure of the site. I took some flexibility with the recommended folder structure and decided to organize the visualizations-related pages in its own folder so that it can be acessible through my website on /visualizations, rather than /visualizations.html.
 
 ```
 assets/                 Houses all images
