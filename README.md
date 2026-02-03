@@ -1,0 +1,36 @@
+# Christina's portfolio
+
+Hello, world! This website was created for IAT 355 - Intro to Data Visualization. The goal was to create a personal website using HTML, CSS, and JavaScript. It shows my skills, education, experience, and interests.
+
+This portfolio was hosted on vercel because my GitHub pages already has the portfolio I use to apply for design roles >.<
+
+## What I built
+
+As of the time of submission, the following is the structure of the site. I took some flexibility with the recommended folder structure and decided to organize the visualizations-related pages in its own folder so that it can be acessible through my website on /visualizations, rather than /visualizations.html.
+
+```
+assets/                 Houses all images
+├── asana.jpeg
+├── bcit.jpeg
+├── cookie.svg
+├── ea.jpeg
+├── felix.jpeg
+├── google.jpeg
+├── sap.jpeg
+├── sfu.jpeg
+├── svsd.jpeg
+└── thumbnail.png
+visualizations/         Accessible in /visualizations
+├── index.html
+├── vis.css
+└── vis.js
+index.html              Main page
+styles.css              Styling for main page
+main.js                 JS for main page
+README.md -> For
+```
+
+## Challenges faced & solutions
+
+1. The primary challenge I faced was positioning elements accurately in SVG. Understanding how cx, cy, and radius work together to control the placement and size of circle elements was difficult at first but after looking at multiple examples online and reading the documentation, I was able to grasp the concept and eventually ended up making a chocolate chip cookie using only SVG shapes, which was really fun.
+2. Another challenge I faced was that as I was coding it was really hard to keep track of styling, like managing colors efficiently. At one point I realized I was using 7 different colors for text and I kept getting the HEX codes mixed up, so I looked into using CSS variables so that I could easily maintain the styling in the codebase. Unfortunately that resulted in my needing to type longer variable names but it's a worthy tradeoff.

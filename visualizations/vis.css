@@ -1,0 +1,17 @@
+.visualizations {
+  margin-top: 0.5rem;
+}
+
+.visualizations h2 {
+  font-family: "Newsreader", sans-serif;
+  font-size: 1rem;
+  text-transform: none;
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+#barChart,
+#cookie {
+  background-color: var(--bg-secondary);
+  border-radius: 8px;
+}

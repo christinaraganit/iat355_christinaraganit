@@ -1,0 +1,45 @@
+<!-- visualizations.html -->
+<!-- This is the page where you display your visualization portfolio. -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SVG Visualizations</title>
+
+    <link rel="icon" type="image/x-icon" href="/assets/cookie.svg" />
+
+    <meta
+      name="description"
+      content="A portfolio of visualizations work by Christina Raganit."
+    />
+    <meta property="og:image" content="/assets/thumbnail.png" />
+
+    <style>
+      @import url("../styles.css");
+      @import url("./vis.css");
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <h1>Visualizations</h1>
+
+      <section class="visualizations">
+        <h2>My screen time yesterday in minutes (February 1, 2026)</h2>
+        <svg id="barChart" width="600" height="350"></svg>
+        <!-- <p class="caption"><mark>Figure 1</mark> Sample Visualization 1</p> -->
+      </section>
+
+      <section class="visualizations">
+        <h2>A chocolate chip cookie.</h2>
+        <svg id="cookie" width="600" height="300"></svg>
+        <p class="caption">
+          <mark>Figure 2</mark> Someone seems to have bitten into it.
+        </p>
+      </section>
+    </main>
+  </body>
+
+  <script src="vis.js" type="text/javascript"></script>
+</html>
