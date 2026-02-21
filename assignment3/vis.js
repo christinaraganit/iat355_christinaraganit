@@ -133,6 +133,39 @@ fetchData()
       .title("Global Sales Over Time by Platform")
       .toSpec();
 
+    // Viz 2.2: Regional Sales by Genre
+    const vlSpec2_2 = vl
+      .markLine()
+      .data(uniqueGames)
+      .transform(vl.filter("datum.Year != null && datum.Year !== 'N/A'"))
+      .encode(
+        vl.x().fieldO("Year").title("Year"),
+        vl
+          .y()
+          .fieldQ("Global_Sales")
+          .aggregate("sum")
+          .title("Global Sales (millions)"),
+        vl
+          .color()
+          .fieldN("Genre")
+          .scale({ scheme: "tableau20" })
+          .title("Genre"),
+        vl.tooltip([
+          { field: "Year", type: "ordinal" },
+          { field: "Genre", type: "nominal" },
+          {
+            field: "Global_Sales",
+            type: "quantitative",
+            aggregate: "sum",
+            title: "Sales (M)",
+          },
+        ]),
+      )
+      .width(600)
+      .height(400)
+      .title("Global Sales Over Time by Genre")
+      .toSpec();
+
     // Viz 3: Regional Sales by Platform
     const vlSpec3 = vl
       .markBar()
@@ -200,6 +233,7 @@ fetchData()
 
     render("#view1", vlSpec);
     render("#view2", vlSpec2);
+    render("#view2-2", vlSpec2_2);
     render("#view3", vlSpec3);
     render("#view4", vlSpec4);
   })
