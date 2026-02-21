@@ -5,13 +5,21 @@ vl.register(vega, vegaLite, {
   },
 });
 
-// Resolve dataset URLs relative to this script so they work from any page URL (e.g. GitHub Pages)
-const scriptBase = new URL(".", import.meta.url).href;
+// Resolve dataset URLs relative to the current page so they work on localhost and Vercel
+function getDataUrl(filename) {
+  let path = window.location.pathname;
+  if (!path.endsWith("/")) {
+    const lastSegment = path.split("/").pop() || "";
+    path = lastSegment.includes(".") ? path.replace(/\/[^/]+$/, "/") : path + "/";
+  }
+  const base = window.location.origin + path;
+  return new URL("dataset/" + filename, base).href;
+}
 
 async function fetchData() {
   const [videoGamesWide, videoGamesLong] = await Promise.all([
-    d3.csv(scriptBase + "dataset/videogames_wide.csv", d3.autoType),
-    d3.csv(scriptBase + "dataset/videogames_long.csv", d3.autoType),
+    d3.csv(getDataUrl("videogames_wide.csv"), d3.autoType),
+    d3.csv(getDataUrl("videogames_long.csv"), d3.autoType),
   ]);
   return { videoGamesWide, videoGamesLong };
 }
