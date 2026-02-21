@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-tooltip"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite-api@5.6.0"></script>
+
+    <script type="text/javascript" src="vegaEmbed.js"></script>
+    <script type="module" src="vis.js"></script>
+    <link rel="stylesheet" href="style.css" />
+
+    <script>
+      const options = {
+        config: {
+          // Vega-Lite default configuration
+        },
+        init: (view) => {
+          // initialize tooltip handler
+          view.tooltip(new vegaTooltip.Handler().call);
+        },
+        view: {
+          // view constructor options
+          // remove the loader if you don't want to default to vega-datasets!
+          loader: vega.loader({
+            baseURL: "https://cdn.jsdelivr.net/npm/vega-datasets@2/",
+          }),
+          renderer: "canvas",
+        },
+      };
+
+      // register vega and vega-lite with the API
+      vl.register(vega, vegaLite, options);
+    </script>
+    <style></style>
+  </head>
+  <body>
+    <h1>Assignment 3</h1>
+    <div class="container">
+      <!-- visualization goes into this div you can create multiple divs and give them IDs -->
+
+      <section>
+        <h2>Topic 1: Global Sales by Platform</h2>
+        <div id="view1"></div>
+        <h3>Questions</h3>
+        <ol>
+          <li>
+            Which video game genre has generated the most total global sales
+            across all platforms?
+          </li>
+          <li>
+            How does the sales contribution of each platform differ within the
+            top-performing genres?
+          </li>
+        </ol>
+        <h3>Rationale</h3>
+        <p>
+          I picked a stacked bar chart because it answers both questions of
+          which genres dominate overall, and the color segments reveal which
+          platforms drive the most sales in each genre. One thing I was
+          conscious of was to make sure that each title is counted once
+          regardless of how many platforms it appeared on for the average sales
+          chart to avoid counting the same game multiple times to ensure that
+          the data was accurate.
+        </p>
+      </section>
+
+      <section>
+        <h2>Topic 2: Sales Over Time by Platform and Genre</h2>
+        <div id="view2"></div>
+        <h3>Questions</h3>
+        <ol>
+          <li>
+            Which platforms saw the sharpest rise and fall in global sales over
+            their lifespan?
+          </li>
+          <li>
+            How do the peak sales years compare across different gaming
+            platforms?
+          </li>
+        </ol>
+        <h3>Rationale</h3>
+        <p>
+          I picked a line chart because it answers both questions of which
+          platforms saw the sharpest rise and fall in global sales over their
+          lifespan, and how do the peak sales years compare across different
+          gaming platforms. Each platform gets its own colored line, making it
+          easy to compare lifecycles side by side. However with the large number
+          of platforms it gets difficult to distinguish with the human eye
+          between the different lines.
+        </p>
+      </section>
+
+      <section>
+        <h2>Topic 3: Regional Sales vs. Platform</h2>
+        <div id="view3"></div>
+        <h3>Questions</h3>
+        <ol>
+          <li>
+            Which platforms are more popular in Japan compared to North America
+            or Europe?
+          </li>
+          <li>
+            How does the overall sales ranking of platforms shift when you look
+            at each region independently?
+          </li>
+        </ol>
+        <h3>Rationale</h3>
+        <p>
+          I decided to break down the dataset into smaller panels, arranged in a
+          grid, with each panel depicting a horizontal bar chart with their own
+          respective region. I felt this would make it easier to compare between
+          different regions. I picked horizontal bars here because if the labels
+          of the platform names were on the X-axis, the names would be long and
+          overlap. I also sorted each panel by sales descending to make it
+          easier to identify the popular platforms of a region within a glance.
+        </p>
+      </section>
+
+      <section>
+        <h2>
+          Topic 4: Nintendo's Number of Games Published vs. Total Games Sold
+        </h2>
+        <div id="view4"></div>
+        <h3>Questions</h3>
+        <ol>
+          <li>
+            Do publishers that release more games necessarily achieve higher
+            total sales, or can a smaller catalog still compete?
+          </li>
+          <li>
+            How does Nintendo's total sales compare to publishers like EA and
+            Activision who have published significantly more games?
+          </li>
+        </ol>
+        <h3>Rationale</h3>
+        <p>
+          I was wondering whether the quantity of games published means higher
+          total sales, which is why I chose the scatter plot. I placed the
+          number of games on the X-axis and total global sales on the Y-axis to
+          visually see this information and see if there’s a relationship
+          between these variables. I color-coded the 7 publishers with the most
+          games and decided not to show all publishers because it would’ve made
+          the data difficult to parse, and I was more concerned about Nintendo’s
+          position in the chart.
+        </p>
+      </section>
+    </div>
+  </body>
+</html>
